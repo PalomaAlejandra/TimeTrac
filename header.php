@@ -33,28 +33,28 @@ if($bloqueo == null || $bloqueo = '')
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="\time/header.php">Dashboard <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="\timeTrac/header.php">Dashboard <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/time/Usuarios/">Usuarios</a>
+        <a class="nav-link" href="/timeTrac/Usuarios/">Usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\time\Status" >Status</a>
+        <a class="nav-link " href="\timeTrac\Status" >Status</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\time\Permisos" >Permisos</a>
+        <a class="nav-link " href="\timeTrac\Permisos" >Permisos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link "href="\time\Proyectos" >Proyectos</a>
+        <a class="nav-link "href="\timeTrac\Proyectos" >Proyectos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\time\Tareas" >Tareas</a>
+        <a class="nav-link " href="\timeTrac\Tareas" >Tareas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\time\Status" >Detalles</a>
+        <a class="nav-link " href="\timeTrac\Status" >Detalles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\time\Status" >Logs</a>
+        <a class="nav-link " href="\timeTrac\Status" >Logs</a>
       </li>
     </ul>
 
