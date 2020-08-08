@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" value="Registra a tu usuario" class="btn btn-success">
+                    <input type="submit" value="Actualizar usuario" class="btn btn-success">
                     <a href ="index.php" type="button"  class="btn btn-primary  float-right mb-5">Regresar</a>
                 </div>
             </form>

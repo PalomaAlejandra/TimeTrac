@@ -39,7 +39,7 @@ if($bloqueo == null || $bloqueo = '')
         <a class="nav-link" href="/timeTrac/Usuarios/">Usuarios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\timeTrac\Status" >Status</a>
+        <a class="nav-link " href="\timeTrac\Status" >Estatus</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="\timeTrac\Permisos" >Permisos</a>
@@ -51,15 +51,15 @@ if($bloqueo == null || $bloqueo = '')
         <a class="nav-link " href="\timeTrac\Tareas" >Tareas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\timeTrac\Status" >Detalles</a>
+        <a class="nav-link " href="#" >Detalles</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="\timeTrac\Status" >Logs</a>
+        <a class="nav-link " href="#" >Logs</a>
       </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-      <a href="\time/seccion.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Seccion</a>   
+      <a href="\time/seccion.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>   
     </form>
   </div>
 </nav>

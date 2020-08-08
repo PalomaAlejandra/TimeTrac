@@ -26,7 +26,7 @@
                 </div>         
 
                 <div class="form-group">
-                    <input type="submit" value="Registra Proyecto" class="btn btn-success">
+                    <input type="submit" value="Actualizar Proyecto" class="btn btn-success">
                     <a href ="index.php" type="button"  class="btn btn-primary  float-right mb-5">Regresar</a>
                 </div>
             </form>

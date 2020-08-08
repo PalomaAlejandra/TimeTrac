@@ -35,7 +35,10 @@
                         </thead>
                         <tbody>
                             <?php
-                            $consulta= "SELECT  * FROM tareas";
+                            $consulta= "SELECT t.id_tarea,t.nombre_tarea, t.fecha_creacion, u.nombre_usr 
+                                        FROM tareas t 
+                                        INNER JOIN usuarios u
+                                        ON t.usuarios_id_usuario=u.id_usuario";
 
                             $resultado = mysqli_query($mysqli,$consulta);
                             while($fila = mysqli_fetch_array($resultado)){
@@ -44,7 +47,7 @@
                                 <td class="text-center"><?php echo $fila["id_tarea"];?></td>
                                 <td class="text-center"><?php echo $fila["nombre_tarea"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_creacion"];?></td>
-                                <td class="text-center"><?php echo $fila["usuarios_id_usuario"];?></td>
+                                <td class="text-center"><?php echo $fila["nombre_usr"];?></td>
 
                                 <td>
                                     <div class="text-center">
