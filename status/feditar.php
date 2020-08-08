@@ -23,6 +23,7 @@
                 <div class="form-group">
                     <label for="Status">Nombre del Estatus</label>
                     <input type="text" name="Status" id="Status" class="form-control" placeholder="Ingresa el nombre de estado" value="<?php echo $fila['nombre_estatus'] ?>">
+                    <input type="hidden" name="id" id="id" placeholder="id" class="form-control" value="<?php echo $fila ['id_estatus'];?>">
                 </div>
 
                 <div class="form-group">

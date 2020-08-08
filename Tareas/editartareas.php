@@ -1,14 +1,12 @@
 <?php
     require_once '../conexion.php';
-    $Status = $_POST['Status'];
+    $Tarea = $_POST['Tarea'];
     $id = $_POST['id'];
-    
   
 
-    $consulta = "UPDATE estatus SET nombre_estatus = '$Status' WHERE id_estatus =$id ";
+    $consulta = "UPDATE tareas SET nombre_tarea = '$Tarea' WHERE id_tarea =$id ";
     mysqli_query($mysqli, $consulta);
     header("Location: index.php");
 
 
 ?>
-

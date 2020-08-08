@@ -52,8 +52,8 @@
                                 <td>
                                     <div class="text-center">
                                         <div class="btn-group">
-                                         <a href="feditar.php?id=<?php echo $fila['id_usuario'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</a>
-                                         <a href="eliminar.php?id=<?php echo $fila['id_usuario'];?>" class="btn btn-danger"><i class="fas fa-trash"></i></i> Eliminar</a>   
+                                         <a href="feditar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</a>
+                                         <a href="eliminar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-danger"><i class="fas fa-trash"></i></i> Eliminar</a>   
                                         </div>
                                     </div>
                                 </td>
