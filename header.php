@@ -59,7 +59,7 @@ if($bloqueo == null || $bloqueo = '')
     </ul>
 
     <form class="form-inline my-2 my-lg-0">
-      <a href="\time/seccion.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>   
+      <a href="\timeTrac/seccion.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>   
     </form>
   </div>
 </nav>

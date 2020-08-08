@@ -3,7 +3,7 @@
     session_start();
     session_unset();
     session_destroy();
-    header("Location:///localhost/time/index.php")
+    header("Location:///localhost/timeTrac/index.php")
     ///localhost/ProyectoDB/index.php"
    
 ?>
