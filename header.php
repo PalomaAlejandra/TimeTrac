@@ -51,7 +51,7 @@ if($bloqueo == null || $bloqueo = '')
         <a class="nav-link " href="\timeTrac\Tareas" >Tareas</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="#" >Detalles</a>
+        <a class="nav-link " href="\timeTrac\Detalle" >Detalles</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="#" >Logs</a>
