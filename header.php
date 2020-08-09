@@ -57,7 +57,9 @@ if($bloqueo == null || $bloqueo = '')
         <a class="nav-link " href="\timeTrac\Logs" >Logs</a>
       </li>
     </ul>
-
+    <form class="form-inline mb--1 mr-sm-3">
+    <h6 class="usr text-success">Bienvenido: <?php print_r($_SESSION['nombre'])?></h6>
+    </form>
     <form class="form-inline my-2 my-lg-0">
       <a href="\timeTrac/seccion.php" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Sesión</a>   
     </form>

@@ -32,8 +32,7 @@
                         </thead>
                         <tbody>
 <?php
-$consulta= "SELECT *FROM logs JOIN  usuarios
-ON responsable_log = id_usuario";
+$consulta= "SELECT *FROM logs JOIN  usuarios ON responsable_log = id_usuario";
 $resultado = mysqli_query($mysqli,$consulta);
 while($fila = mysqli_fetch_array($resultado)){
 ?>
@@ -43,7 +42,7 @@ while($fila = mysqli_fetch_array($resultado)){
                                 <td class="text-center"><?php echo $fila["descripcion_log"];?></td>
                                 <td class="text-center"><?php echo $fila["fuente_log"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_log"];?></td>
-                                <td><a class="text-center" href="logsdetallado.php?id=<?php echo $fila['id_usuario']; ?>"><?php echo $fila["nombre_usr"];?></a></td>
+                                <td class="text-center"><?php echo $fila["nombre_usr"];?></td>
                                         </div>
                                     </div>
                                 </td>
