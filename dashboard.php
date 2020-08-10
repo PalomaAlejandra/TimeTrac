@@ -11,7 +11,7 @@
 </head>
 <body>
 <?php require_once 'conexion.php';
-     include_once 'header.php';
+      include_once 'header.php';
     ?>
  <div class="container mt-5">
             <div class="row">
@@ -35,36 +35,20 @@
                             <?php
                             $consulta= "SELECT *
                                         FROM detalle
-                                        INNER JOIN tareas
-                                        ON  tareas_id_tarea = id_tarea 
-                                        INNER JOIN estatus
-                                        ON estatus_id_estatus = id_estatus
-                                        INNER JOIN  usuarios
-                                        ON id_asignador = id_usuario
-                                        WHERE id_responsable = '".$_SESSION['id']."'
+                                        INNER JOIN proyectos
+                                        ON  proyectos_id_proyecto = id_proyecto
+                                        WHERE estatus_id_estatus = '3'
                                         ";
 
                             $resultado = mysqli_query($mysqli,$consulta);
                             while($fila = mysqli_fetch_array($resultado)){
                             ?>
                             <tr>
-                                <td class="text-center"><?php echo $fila["id_tarea"];?></td>
-                                <td class="text-center"><?php echo $fila["nombre_tarea"];?></td>
-                                <td class="text-center"><?php echo $fila["nombre_estatus"];?></td>
-
-                                <td>
-                                    <div class="text-center">
-                                        <div class="btn-group">
-                                        <a href="accion.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Iniciar Tarea</a>
-                                         <a href="feditar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-info"> <i class="fas fa-edit"></i> Editar</a>
-
-                                         <a href="elimnardetalle.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-danger"><i class="fas fa-trash"></i></i> Eliminar</a>   
-                                        </div>
-                                    </div>
-                                </td>
+                                <td class="text-center"><?php echo $fila["id_proyecto"];?></td>
+                                <td class="text-center"><?php echo $fila["nombre_proyecto"];?></td>
+                                <td class="text-center"></td>
                             </tr>
                             <?php }
-
                              ?>
                         </tbody>
                         </table>

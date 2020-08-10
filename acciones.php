@@ -41,7 +41,7 @@ if($usuario == '' && empty($password)){
         } 
             if($respuesta == 1)
             {
-                header('Location: header.php');
+                header('Location: dashboard.php');
                 
                 
             } 
