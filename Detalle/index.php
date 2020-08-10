@@ -46,6 +46,7 @@
                                         ON estatus_id_estatus = id_estatus
                                         INNER JOIN  usuarios
                                         ON id_asignador = id_usuario
+                                        WHERE id_responsable = '".$_SESSION['id']."'
                                         ";
 
                             $resultado = mysqli_query($mysqli,$consulta);
@@ -71,7 +72,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            <?php } ?>
+                            <?php }
+
+                             ?>
                         </tbody>
                         </table>
                    </div>
