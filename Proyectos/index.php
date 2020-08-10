@@ -24,7 +24,9 @@ include_once '../header.php';
             <div class="container mt-3">
         <div class="row">
             <?php
-            $consulta= "SELECT * FROM proyectos";
+           $consulta= "SELECT  DISTINCT proyectos_id_proyecto, d.nombre_proyecto FROM detalle 
+           INNER JOIN proyectos d on id_proyecto = proyectos_id_proyecto
+           WHERE id_responsable = '".$_SESSION['id']."'";
             $resultado = mysqli_query($mysqli,$consulta);
             while($fila = mysqli_fetch_array($resultado)){
             ?>
