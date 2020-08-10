@@ -31,10 +31,10 @@ include_once '../header.php';
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card">
                       <div class="card-body text-center">
-                          <a href="detalle.php" class="font-weight-bold " ><?php echo $fila["nombre_proyecto"]; ?></a>
+                          <p href="detalle.php" class="font-weight-bold " ><?php echo $fila["nombre_proyecto"]; ?></p>
                             <div class="text-center">
                                         <div class="btn-group">
-                                        <a href="../Tareas/formulario.php?id=<?php echo $fila['id_proyecto'];?>" class="btn btn-primary"> <i class="fas fa-plus-circle"></i>Agregar</a>
+                                       
                                          <a href="feditar.php?id=<?php echo $fila['id_proyecto'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Editar</a>
                                          <a href="eliminar.php?id=<?php echo $fila['id_proyecto'];?>" class="btn btn-danger"><i class="fas fa-minus-circle"></i>Eliminar</a>   
                                         </div>
