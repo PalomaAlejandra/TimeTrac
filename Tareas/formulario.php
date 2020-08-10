@@ -18,8 +18,26 @@
                 <div class="form-group">
                     <label for="nombre">Nombre de la tarea</label>
                     <input type="text" name="nombre" id="nombre" class="form-control" placeholder="ingrese el nombre de la nueva tarea">
+
                 </div>         
-            
+                <div class="form-group">
+                    <label for="Usu">Usuario</label>
+                    <select name="Usu" id="Usu" class="form-control">
+                        <option value="0">Seleccione al usuario:</option>
+                        <?php
+                        $consulta = "SELECT * FROM usuarios";
+                        $resultado = mysqli_query($mysqli, $consulta);
+                        while ($fila = mysqli_fetch_array($resultado))
+                        
+                        {
+                            ?>
+                            <option value="<?php echo $fila["id_usuario"]; ?>">
+                              <?php echo $fila["nombre_usr"];?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>                
+                </div>
                 <div class="form-group">
                     <input type="submit" value="Registra Proyecto" class="btn btn-success">
                     <a href ="index.php" type="button"  class="btn btn-primary  float-right mb-5">Regresar</a>
