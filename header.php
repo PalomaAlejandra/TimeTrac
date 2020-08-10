@@ -16,7 +16,7 @@ $bloqueo = $_SESSION['nombre'];
 
 if($bloqueo == null || $bloqueo = '')
 {
-  header("Location:///localhost/time/index.php");
+  header("Location:///localhost/timeTrac/index.php");
   
   
   die();

@@ -22,7 +22,7 @@
     <div class="container mt-5">
         <div class="row">
         <div class="col-sm-12">
-            <form action="newpermiso.php" method="POST">
+            <form action="editar.php" method="POST">
                 <div class="form-group">
                     <label for="Permiso">Nombre del Permiso</label>
                     <input type="text" name="Permiso" id="Permiso" class="form-control" placeholder="Ingresa El permiso" value="<?php echo $fila['nombre_rol'] ?>">

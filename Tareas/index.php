@@ -16,7 +16,8 @@
             <div class="row">
                 <div class="col-lg-12">
                 <h1 class="text-center">TAREAS</h1>
-                <a href ="formulario.php" class="btn btn-primary float-left mb-5"><i class="fas fa-plus"  ></i> Nuevo</a>  
+                <a href ="formulario.php" class="btn btn-primary float-left mb-5"><i class="fas fa-plus"  ></i> Nuevo</a>
+                <a href ="formasignartarea.php" class="btn btn-primary float-right mb-5"><i class="fas fa-plus"  ></i> Asignar Tarea</a>
                 </div>
                 
 
@@ -48,7 +49,6 @@
                                 <td class="text-center"><?php echo $fila["nombre_tarea"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_creacion"];?></td>
                                 <td class="text-center"><?php echo $fila["nombre_usr"];?></td>
-
                                 <td>
                                     <div class="text-center">
                                         <div class="btn-group">
