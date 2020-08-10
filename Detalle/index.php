@@ -58,13 +58,19 @@
                                 <td class="text-center"><?php echo $fila["nombre_estatus"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_inicio"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_fin"];?></td>
-                                <td class="text-center">----</td>
+                                <td class="text-center"> -- </td>
                                 <td class="text-center"><?php echo $fila["nombre_usr"];?></td>
 
                                 <td>
                                     <div class="text-center">
                                         <div class="btn-group">
-                                        <a href="accion.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Iniciar Tarea</a>
+                                        
+                                          
+                                        <a name="Inicio" value="1" href="accion.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Iniciar Tarea</a>
+
+                                        <a name="Inicio" value="2" href="accion2.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Finalizar Tarea</a>
+
+                                      
                                          <a href="feditar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-info"> <i class="fas fa-edit"></i> Editar</a>
 
                                          <a href="elimnardetalle.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-danger"><i class="fas fa-trash"></i></i> Eliminar</a>   

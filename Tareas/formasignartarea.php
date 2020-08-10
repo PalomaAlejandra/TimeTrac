@@ -34,23 +34,6 @@
                     </select>                
                 </div>
 
-               <div class="form-group">
-                    <label for="usu">Responsable</label>
-                    <select name="usu" id="usu" class="form-control">
-                        <option value="0">Seleccione un usuario:</option>
-                        <?php
-                        $consulta = "SELECT * FROM usuarios";
-                        $resultado = mysqli_query($mysqli, $consulta);
-                        while ($fila = mysqli_fetch_array($resultado))
-                        
-                        {
-                            ?>
-                            <option value="<?php echo $fila["id_usuario"]; ?>"><?php echo $fila["nombre_usr"];?></option>
-                            <?php
-                        }
-                        ?>
-                    </select>                
-                </div>
 
                 <div class="form-group">
                     <label for="proy">Proyecto</label>
@@ -64,6 +47,24 @@
                         {
                             ?>
                             <option value="<?php echo $fila["id_proyecto"]; ?>"><?php echo $fila["nombre_proyecto"];?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>                
+                </div>
+                
+                <div class="form-group">
+                    <label for="usu">Responsable</label>
+                    <select name="usu" id="usu" class="form-control">
+                        <option value="0">Seleccione un usuario:</option>
+                        <?php
+                        $consulta = "SELECT * FROM usuarios";
+                        $resultado = mysqli_query($mysqli, $consulta);
+                        while ($fila = mysqli_fetch_array($resultado))
+                        
+                        {
+                            ?>
+                            <option value="<?php echo $fila["id_usuario"]; ?>"><?php echo $fila["nombre_usr"];?></option>
                             <?php
                         }
                         ?>
