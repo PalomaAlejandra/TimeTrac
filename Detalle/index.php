@@ -50,7 +50,13 @@
                                         ";
 
                             $resultado = mysqli_query($mysqli,$consulta);
-                            while($fila = mysqli_fetch_array($resultado)){
+                            $consulta2="SELECT CONCAT(
+                                FLOOR(HOUR(TIMEDIFF(fecha_inicio, fecha_fin)) / 24), ' Dias ',
+                                MOD(HOUR(TIMEDIFF(fecha_fin, fecha_inicio)), 24), ' Horas ',
+                                MINUTE(TIMEDIFF(fecha_fin, fecha_inicio)), ' Minutos ',
+                                SECOND(TIMEDIFF(fecha_fin, fecha_inicio)), ' Segundos') as total FROM detalle WHERE id_responsable = '".$_SESSION['id']."'";
+                             $resultado2 = mysqli_query($mysqli,$consulta2);
+                             while(($fila = mysqli_fetch_array($resultado)) && ($fila2 = mysqli_fetch_array($resultado2))){
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $fila["id_tarea"];?></td>
@@ -58,22 +64,21 @@
                                 <td class="text-center"><?php echo $fila["nombre_estatus"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_inicio"];?></td>
                                 <td class="text-center"><?php echo $fila["fecha_fin"];?></td>
-                                <td class="text-center"> -- </td>
+                                <td class="text-center"><?php echo $fila2["total"];?></td>
                                 <td class="text-center"><?php echo $fila["nombre_usr"];?></td>
 
                                 <td>
                                     <div class="text-center">
-                                        <div class="btn-group">
-                                        
+                                        <div class="btn-group btn-sm col-xs-2">
                                           
-                                        <a name="Inicio" value="1" href="accion.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Iniciar Tarea</a>
+                                        <a name="Inicio" value="1" href="accion.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-check-circle"></i> Iniciar Tarea </a>&nbsp;&nbsp;
 
-                                        <a name="Inicio" value="2" href="accion2.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-edit"></i> Finalizar Tarea</a>
+                                        <a name="Inicio" value="2" href="accion2.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Finalizar Tarea</a>&nbsp;&nbsp;
 
                                       
-                                         <a href="feditar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-info"> <i class="fas fa-edit"></i> Editar</a>
+                                         <a href="feditar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-info"> <i class="fas fa-edit"></i> Editar</a>&nbsp;&nbsp;
 
-                                         <a href="elimnardetalle.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-danger"><i class="fas fa-trash"></i></i> Eliminar</a>   
+                                         <a href="elimnardetalle.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-danger"><i class="fas fa-trash"></i></i> Eliminar</a>&nbsp;&nbsp;
                                         </div>
                                     </div>
                                 </td>

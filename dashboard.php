@@ -39,14 +39,19 @@
                                         ON  proyectos_id_proyecto = id_proyecto
                                         WHERE estatus_id_estatus = '3'
                                         ";
-
                             $resultado = mysqli_query($mysqli,$consulta);
-                            while($fila = mysqli_fetch_array($resultado)){
+                            $consulta2="SELECT CONCAT(
+                                FLOOR(HOUR(TIMEDIFF(fecha_inicio, fecha_fin)) / 24), ' Dias ',
+                                MOD(HOUR(TIMEDIFF(fecha_fin, fecha_inicio)), 24), ' Horas ',
+                                MINUTE(TIMEDIFF(fecha_fin, fecha_inicio)), ' Minutos ',
+                                SECOND(TIMEDIFF(fecha_fin, fecha_inicio)), ' Segundos') as total FROM detalle WHERE estatus_id_estatus = '3'";
+                             $resultado2 = mysqli_query($mysqli,$consulta2);   
+                            while(($fila = mysqli_fetch_array($resultado)) && ($fila2 = mysqli_fetch_array($resultado2))){
                             ?>
                             <tr>
                                 <td class="text-center"><?php echo $fila["id_proyecto"];?></td>
                                 <td class="text-center"><?php echo $fila["nombre_proyecto"];?></td>
-                                <td class="text-center"></td>
+                                <td class="text-center"><?php echo $fila2["total"];?></td>
                             </tr>
                             <?php }
                              ?>
