@@ -28,6 +28,7 @@ if($usuario == '' && empty($password)){
                 session_start();
                 $_SESSION["id"] = $fila["id_usuario"];
                 $_SESSION["nombre"] = $fila["nombre_usr"];
+                $_SESSION["rol"]=$fila["roles_id_rol"];
                 $respuesta = 1;
             }
             else

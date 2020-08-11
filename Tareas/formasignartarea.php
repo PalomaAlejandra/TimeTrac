@@ -15,6 +15,11 @@
     <div class="container mt-5">
         <div class="row">
         <div class="col-sm-12">
+            <?php 
+                $Tipo = $_SESSION["rol"];
+                 if ($Tipo == 2) 
+                 {
+                    ?>
             <form action="asignartarea.php" method="POST">
                 <div class="form-group">
                     <label for="Tarea">Tarea</label>
@@ -77,6 +82,58 @@
                     <a href ="index.php" type="button"  class="btn btn-primary  float-right mb-5">Regresar</a>
                 </div>
             </form>
+        <?php }
+
+
+        else{
+            ?>
+            <form action="asignartarea2.php" method="POST">
+                <div class="form-group">
+                    <label for="Tarea">Tarea</label>
+                    <select name="Tarea" id="Tarea" class="form-control">
+                        <option value="0">Seleccione la tarea:</option>
+                        <?php
+                        $consulta = "SELECT * FROM tareas";
+                        $resultado = mysqli_query($mysqli, $consulta);
+                        while ($fila = mysqli_fetch_array($resultado))
+                        
+                        {
+                            ?>
+                            <option value="<?php echo $fila["id_tarea"]; ?>"><?php echo $fila["nombre_tarea"];?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>                
+                </div>
+
+
+                <div class="form-group">
+                    <label for="proy">Proyecto</label>
+                    <select name="proy" id="proy" class="form-control">
+                        <option value="0">Seleccione el proyecto:</option>
+                        <?php
+                        $consulta = "SELECT * FROM proyectos";
+                        $resultado = mysqli_query($mysqli, $consulta);
+                        while ($fila = mysqli_fetch_array($resultado))
+                        
+                        {
+                            ?>
+                            <option value="<?php echo $fila["id_proyecto"]; ?>"><?php echo $fila["nombre_proyecto"];?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>                
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Registra a tu usuario" class="btn btn-success">
+                    <a href ="index.php" type="button"  class="btn btn-primary  float-right mb-5">Regresar</a>
+                </div>
+            </form>
+
+
+     <?php } ?>
         </div>
         </div>
     </div>

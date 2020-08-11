@@ -14,6 +14,7 @@
     <div class="container mt-5">
         <div class="row">
         <div class="col-sm-12">
+            
             <form action="insertar.php" method="POST">
                 <div class="form-group">
                     <label for="nombre">Nombre de la tarea</label>
