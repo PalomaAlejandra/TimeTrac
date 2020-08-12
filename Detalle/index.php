@@ -70,11 +70,32 @@
                                 <td>
                                     <div class="text-center">
                                         <div class="btn-group btn-sm col-xs-2">
+
+                                        <?php 
+                                        $estatus= $fila["estatus_id_estatus"];
+                                        if ($estatus==1) {
+                                          
+                                        ?>
                                           
                                         <a name="Inicio" value="1" href="accion.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-success"> <i class="fas fa-check-circle"></i> Iniciar Tarea </a>&nbsp;&nbsp;
 
+                                      <?php }
+
+                                      elseif ($estatus==2) {
+                                        
+                                      
+                                       ?>
                                         <a name="Inicio" value="2" href="accion2.php?id=<?php echo $fila['id_detalle'];?>" class="btn btn-warning"> <i class="fas fa-times-circle"></i> Finalizar Tarea</a>&nbsp;&nbsp;
 
+                                      <?php }
+
+                                      elseif ($estatus==3) {
+                                        
+                                      ?>
+                                      <p></p>
+                                    <?php 
+                                      }
+                                       ?>
                                       
                                          <a href="feditar.php?id=<?php echo $fila['id_tarea'];?>" class="btn btn-info"> <i class="fas fa-edit"></i> Editar</a>&nbsp;&nbsp;
 
