@@ -44,7 +44,7 @@
                                 FLOOR(HOUR(TIMEDIFF(fecha_inicio, fecha_fin)) / 24), ' Dias ',
                                 MOD(HOUR(TIMEDIFF(fecha_fin, fecha_inicio)), 24), ' Horas ',
                                 MINUTE(TIMEDIFF(fecha_fin, fecha_inicio)), ' Minutos ',
-                                SECOND(TIMEDIFF(fecha_fin, fecha_inicio)), ' Segundos') as total FROM detalle WHERE estatus_id_estatus = '3'";
+                                SECOND(TIMEDIFF(fecha_fin, fecha_inicio)), ' Segundos') as total FROM detalle WHERE estatus_id_estatus = '3' ORDER BY fecha_fin ASC";
                              $resultado2 = mysqli_query($mysqli,$consulta2);   
                             while(($fila = mysqli_fetch_array($resultado)) && ($fila2 = mysqli_fetch_array($resultado2))){
                             ?>
