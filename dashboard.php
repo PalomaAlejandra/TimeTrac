@@ -33,7 +33,16 @@
                         </thead>
                         <tbody>
                             <?php
-                            $consulta= "SELECT *
+                    $contador = 1;
+                    $consulta = "SELECT
+                    proyectos.nombre_proyecto,
+                    SEC_TO_TIME(SUM(TIMESTAMPDIFF(SECOND,fecha_inicio,fecha_fin))) AS total
+                    FROM detalle
+                    INNER JOIN proyectos ON detalle.proyectos_id_proyecto = proyectos.id_proyecto
+                    WHERE estatus_id_estatus = 3 GROUP BY proyectos_id_proyecto";
+
+
+                           /* $consulta= "SELECT *
                                         FROM detalle
                                         INNER JOIN proyectos
                                         ON  proyectos_id_proyecto = id_proyecto
@@ -46,14 +55,18 @@
                                 MINUTE(TIMEDIFF(fecha_fin, fecha_inicio)), ' Minutos ',
                                 SECOND(TIMEDIFF(fecha_fin, fecha_inicio)), ' Segundos') as total FROM detalle WHERE estatus_id_estatus = '3' ORDER BY fecha_fin ASC";
                              $resultado2 = mysqli_query($mysqli,$consulta2);   
-                            while(($fila = mysqli_fetch_array($resultado)) && ($fila2 = mysqli_fetch_array($resultado2))){
+                            while(($fila = mysqli_fetch_array($resultado)) && ($fila2 = mysqli_fetch_array($resultado2))){*/
+                                $resultado = mysqli_query($mysqli, $consulta);
+                                    while($fila = mysqli_fetch_array($resultado)){
                             ?>
                             <tr>
-                                <td class="text-center"><?php echo $fila["id_proyecto"];?></td>
+                                <td class="text-center"><?php echo $contador;?></td>
                                 <td class="text-center"><?php echo $fila["nombre_proyecto"];?></td>
-                                <td class="text-center"><?php echo $fila2["total"];?></td>
+                                <td class="text-center"><?php echo $fila["total"];?></td>
                             </tr>
-                            <?php }
+                            <?php
+                            
+                        $contador++;}
                              ?>
                         </tbody>
                         </table>
