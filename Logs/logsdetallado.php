@@ -32,7 +32,9 @@
                         </thead>
                         <tbody>
 <?php
-$consulta= "SELECT *FROM logs JOIN  usuarios ON responsable_log = id_usuario";
+$id = $_GET["id"];
+$consulta= "SELECT * FROM logs INNER JOIN usuarios ON logs.responsable_log = usuarios.id_usuario
+WHERE usuarios.id_usuario = '$id'";
 $resultado = mysqli_query($mysqli,$consulta);
 while($fila = mysqli_fetch_array($resultado)){
 ?>
